@@ -70,12 +70,17 @@
       transform: translate(-50%, -50%);
       font-size: 4rem;
       color: #00a0aa;
-      animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite, pulseBrightness 2.5s ease-in-out infinite;
     }
 
     @keyframes spin {
       0% { transform: translate(-50%, -50%) rotate(0deg); }
       100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes pulseBrightness {
+      0%, 100% { filter: brightness(60%); }
+      50% { filter: brightness(140%); }
     }
   </style>
 </head>
@@ -83,14 +88,14 @@
 
   <h1>AUTOSAPIEN.AI</h1>
 
-  <!-- Top branding robot icon (not spinning) -->
+  <!-- Top branding robot icon (static) -->
   <div class="robot-icon-top">🤖</div>
 
   <div class="domain">autosapien.ai</div>
   <div class="coming-soon">is coming soon</div>
   <div class="tagline">AI THAT LEARNS AND EVOLVES</div>
 
-  <!-- Game with robot spinner while loading -->
+  <!-- Game with animated loading robot -->
   <div class="game-container">
     <div id="spinner" class="spinner">🤖</div>
     <iframe
